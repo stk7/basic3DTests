@@ -45,20 +45,15 @@ public class Basic3DTest implements ApplicationListener {
         Gdx.input.setInputProcessor(camController);
 
         assets = new AssetManager();
-        assets.load("data/ship.g3db", Model.class);
+        assets.load("data/gingerbread.g3db", Model.class);
         loading = true;
 		
 	}
 	
 	private void doneLoading() {
-        Model ship = assets.get("data/ship.g3db", Model.class);
-        for (float x = -5f; x <= 5f; x += 2f) {
-            for (float z = -5f; z <= 5f; z += 2f) {
-                ModelInstance shipInstance = new ModelInstance(ship);
-                shipInstance.transform.setToTranslation(x, 0, z);
+        Model ship = assets.get("data/gingerbread.g3db", Model.class);
+        	ModelInstance shipInstance = new ModelInstance(ship);
                 instances.add(shipInstance);
-            }
-        }
         loading = false;
 	}
 
